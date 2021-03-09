@@ -9,6 +9,28 @@
 .btn {
   padding: 1vw 2vw;
 }
+.btn-black {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5vw;
+}
+.btn-white {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 6px;
+  border-radius: black;
+  color: black;
+  font-size: 1.5vw;
+}
+.btn-black:hover,
+.btn-white:hover {
+  transform: scale(1.1);
+}
+.container-button {
+  text-align: center;
+}
 /* pomodoro */
 
 .section-pomodoro {
@@ -25,7 +47,6 @@
   left: 3%;
   padding: 1vw 2vw;
   z-index: 0;
-
   width: 30%;
 }
 .section-pomodoro h1 {
@@ -47,6 +68,9 @@
   margin: 1vw 0 1vw;
   padding: 1vw 2vw;
   width: 80%;
+}
+.btn-next-quote {
+  padding: 0.5vw 1vw;
 }
 .section-pomodoro button:hover {
   transform: scale(1.1);
@@ -89,4 +113,41 @@
 .btn-pomodoro-finished:hover {
   background: black;
   color: white;
+}
+/* quotes */
+.container-quotes {
+  position: absolute;
+  left: 40vw;
+  top: 3vw;
+  width: 35vw;
+}
+.quote-container {
+  display: flex;
+  flex-direction: column;
+}
+.container-text-quote {
+  display: flex;
+  flex-direction: column;
+}
+.qoute-next {
+  font-size: 5vw;
+  font-weight: lighter;
+  margin-top: 1vw;
+}
+.quote-container img {
+  width: 5%;
+}
+.lastImagequote button {
+  margin-right: 5vw;
+  margin-top: 2vw;
+}
+.lastImagequote img {
+  transform: rotate(180deg);
+  float: right;
+}
+.text-qoute {
+  font-size: 1.5vw;
+}
+.btn-quote {
+  margin-top: 2vw;
 }
