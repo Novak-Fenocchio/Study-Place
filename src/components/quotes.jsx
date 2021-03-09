@@ -46,7 +46,12 @@ export default class Quotes extends Component {
                         }
                         </div>
                         <div className="container-quote-image container-button lastImagequote">
+                        {this.state.quote != false &&
+                         <React.Fragment>
                             <button className='btn-white btn-next-quote' onClick={this.getQuote}>Nueva frase</button>
+                            <button className='btn-orange btn-next-quote' onClick={this.getQuote}>Añadir frase</button> 
+                         </React.Fragment>
+                        }
                             <img src={quote}/>
                         </div>
                     </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import Module from './module';
+
 export default class Pomodoro extends Component {
 
     constructor()
@@ -11,8 +13,8 @@ export default class Pomodoro extends Component {
             finished: false,
             counting: false,
             time: 1500,
-            minutes: 24,
-            seconds: 59
+            minutes: 0,
+            seconds: 5
         }
     }
 
@@ -58,21 +60,15 @@ export default class Pomodoro extends Component {
       {
        clearInterval(this.state.countDown);
        this.setState({
-           finished: true
+           finished: true,
+           countDown: undefined,
+           counting: false,
+           time: 1500,
+           minutes: 24,
+           seconds: 59
        })
       }
 
-      changeFinished = () =>
-      {
-        this.setState({
-            countDown: undefined,
-            finished: false,
-            counting: false,
-            time: 1500,
-            minutes: 24,
-            seconds: 59
-        })
-      }
 
     render() {
         return (
@@ -91,12 +87,7 @@ export default class Pomodoro extends Component {
             </section>
 
             {this.state.finished &&
-            <section className='pomodoro-finished'>
-                <div className="">
-                    <h1>El contador termino! descansa.</h1>
-                    <button className='btn-pomodoro-finished' onClick={this.changeFinished}>Okey</button>
-                </div>
-            </section>
+              <Module alert='pomodoro'/>
             }
             </React.Fragment>
         )

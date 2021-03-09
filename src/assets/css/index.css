@@ -24,8 +24,18 @@
   color: black;
   font-size: 1.5vw;
 }
+.btn-orange {
+  background-color: rgb(255, 211, 14);
+  border: 2px solid rgb(255, 211, 14);
+  border-radius: 6px;
+  border-radius: black;
+  color: black;
+  font-size: 1.5vw;
+}
+
 .btn-black:hover,
-.btn-white:hover {
+.btn-white:hover,
+.btn-orange:hover {
   transform: scale(1.1);
 }
 .container-button {
@@ -138,7 +148,7 @@
   width: 5%;
 }
 .lastImagequote button {
-  margin-right: 5vw;
+  margin-right: 3vw;
   margin-top: 2vw;
 }
 .lastImagequote img {
