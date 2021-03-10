@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import quote from '../assets/img/quoteSimbol.png';
+import Loading from './loading';
 import Module from './module';
 
 export default class Quotes extends Component {
@@ -55,7 +56,7 @@ export default class Quotes extends Component {
                 <div className='container-quotes'>
                     <div className="quote-container">
                         <div className="container-quote-image">
-                            <img src={quote} alt=""/> 
+                            <img src={quote} className='quote-container-img' alt=""/> 
                         </div>
                         <div className="container-text-quote">
                         {
@@ -66,7 +67,7 @@ export default class Quotes extends Component {
                          }
                          {
                              this.state.loadingQuote == true &&
-                             <h1 className='loadingQuote'>Loading...</h1>
+                             <Loading/>
                          }
                          {this.state.quote != false &&
                          <React.Fragment>
@@ -81,7 +82,7 @@ export default class Quotes extends Component {
                             <button className='btn-orange btn-next-quote' onClick={this.addQuote}>Añadir frase</button> 
                          </React.Fragment>
                         }
-                            <img src={quote}/>
+                            <img src={quote} className='quote-container-img'/>
                         </div>
                     </div>
                 </div>
