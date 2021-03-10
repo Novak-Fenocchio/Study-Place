@@ -154,10 +154,45 @@
 .lastImagequote img {
   transform: rotate(180deg);
   float: right;
+  margin-top: 1vw;
 }
 .text-qoute {
   font-size: 1.5vw;
+  font-style: italic;
+  text-align: center;
 }
 .btn-quote {
   margin-top: 2vw;
+}
+.input-quote {
+  color: black;
+  margin-right: 5vw;
+  height: 50%;
+  width: 80%;
+}
+.input-quote:hover {
+  background-color: rgb(253, 187, 43);
+  color: white;
+}
+.input-quote:focus {
+  outline: none;
+}
+.input-quote::-moz-placeholder {
+  /* Firefox 19+ */
+  color: black;
+}
+
+.input-quote::-webkit-input-placeholder {
+  color: black;
+}
+.input-quote:-moz-placeholder {
+  /* Firefox 18- */
+  color: black;
+}
+.input-quote:-ms-input-placeholder {
+  color: black;
+}
+.loadingQuote {
+  text-align: center;
+  font-style: italic;
 }

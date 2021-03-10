@@ -10,11 +10,12 @@ export default class Pomodoro extends Component {
         this.state =
         {
             countDown: undefined,
+            quotePersonally: undefined,
             finished: false,
             counting: false,
             time: 1500,
-            minutes: 0,
-            seconds: 5
+            minutes: 24,
+            seconds: 59
         }
     }
 
@@ -69,6 +70,14 @@ export default class Pomodoro extends Component {
        })
       }
 
+      
+      getWeather = async (e) =>
+     {
+        e.preventDefault();
+        this.setState({
+          quotePersonally: e.target.elements.quote.value
+        }) 
+     }
 
     render() {
         return (
@@ -87,7 +96,7 @@ export default class Pomodoro extends Component {
             </section>
 
             {this.state.finished &&
-              <Module alert='pomodoro'/>
+              <Module alert='pomodoro' message={this.getWeather}/>
             }
             </React.Fragment>
         )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import quote from '../assets/img/quoteSimbol.png';
+import Module from './module';
 
 export default class Quotes extends Component {
 
@@ -8,21 +9,45 @@ export default class Quotes extends Component {
     {
         super();
         this.state = {
-            quote: false
+            quote: false,
+            addQuote: false,
+            newQuotePersonally: false,
+            loadingQuote: false
         }
     }
 
     getQuote = async() =>
     {  
+        this.setState({
+            loadingQuote: true
+        })
         const quoteGived = await fetch('http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en')
         .then(res => res.json());
 
         this.setState({
-            quote: quoteGived.quoteText
+            quote: quoteGived.quoteText,
+            loadingQuote: false
         })
     }
 
-    
+    addQuote = () =>
+    {
+        this.setState(
+            {
+              addQuote: true,
+              newQuotePersonally: false
+            }
+        )
+    }
+    addQuoteFinished = async(e) =>
+    {
+        e.preventDefault();
+        this.setState({
+            quote: e.target.elements.quote.value,
+            newQuotePersonally: true,
+            addQuote: false
+        })
+    }
 
     render() {
         return (
@@ -34,10 +59,14 @@ export default class Quotes extends Component {
                         </div>
                         <div className="container-text-quote">
                         {
-                        this.state.quote == false &&
+                        this.state.loadingQuote == false && this.state.quote == false &&
                         <div className="container-button">
                             <button className='btn btn-black btn-quote' onClick={this.getQuote}>Nueva frase</button>
                         </div>
+                         }
+                         {
+                             this.state.loadingQuote == true &&
+                             <h1 className='loadingQuote'>Loading...</h1>
                          }
                          {this.state.quote != false &&
                          <React.Fragment>
@@ -49,15 +78,17 @@ export default class Quotes extends Component {
                         {this.state.quote != false &&
                          <React.Fragment>
                             <button className='btn-white btn-next-quote' onClick={this.getQuote}>Nueva frase</button>
-                            <button className='btn-orange btn-next-quote' onClick={this.getQuote}>Añadir frase</button> 
+                            <button className='btn-orange btn-next-quote' onClick={this.addQuote}>Añadir frase</button> 
                          </React.Fragment>
                         }
                             <img src={quote}/>
                         </div>
                     </div>
-                    
-
                 </div>
+                {
+                    this.state.addQuote && this.state.newQuotePersonally == false &&
+                    <Module alert='quote' quotePersonally={this.addQuoteFinished}/>
+                }
             </React.Fragment>
         )
     }
