@@ -9,25 +9,50 @@ export default class Notes extends Component {
         this.state = 
         {
             taskClose: [],
-            tasks: []
+            tasks: [],
+            newTaskText : ''
         }
+
+        this.updateInput = this.updateInput.bind(this);
+        this.createTask = this.createTask.bind(this);
     }
 
-    addTask = () =>
+    addTask = (taskText) =>
     {
-        console.log(this.state.tasks);
+     
         const tasks = [];
+  
+        
+       const newTask = taskText;
+       tasks.splice(tasks.length,0,newTask);
         console.log(tasks);
 
-       const newTask = 'Terminar tarea de matematica'
-        tasks.push(newTask);
+        {this.state.tasks.map(task =>
+         {
+            console.log(task);
+            tasks.splice(tasks.length,0,task);
+        })}
         console.log(tasks);
+        
+
  
-        const newTask1 = 'Terminar tarea de geografia';
-        tasks.splice(tasks.length,0,newTask1);
 
-        const newTask2 = 'Terminar tarea de quimica';
-        tasks.splice(tasks.length,0,newTask2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
          this.setState({
             tasks: tasks
@@ -57,6 +82,17 @@ export default class Notes extends Component {
         }) */
     }
 
+
+    updateInput(event) {
+        this.setState({newTaskText: event.target.value});
+    }
+
+    createTask(event) {
+        const newTaskText = this.state.newTaskText;
+        event.preventDefault();
+        this.addTask(newTaskText)
+      }
+
     render() {
         return (
             <section className='section-notes'>
@@ -66,29 +102,22 @@ export default class Notes extends Component {
 
                 <div className="main-notas">
                 {this.state.tasks.map(task =>(
-                    <div className="">
+                    <React.Fragment>
                         <div><div className="checkbox-notes" id='1' onClick={this.closeTask}></div><span className='text-note' id='task2' style={this.state.taskClose[1]}>{task}</span></div>
                         <hr/>
-                    </div>
+                    </React.Fragment>
                 ))}
                 <hr/>
                
                 <div><div className="checkbox-notes" id='1' onClick={this.closeTask}></div><span className='text-note' id='task2' style={this.state.taskClose[1]}>Terminar tarea de Matemáticas</span></div>
                         <hr/>
-                  {/*   
-                    <div><div className="checkbox-notes" id='2' onClick={this.closeTask}></div><span className='text-note' id='task3'>Terminar tarea de Historía</span></div>
-                    <hr/>
-                    <div><div className="checkbox-notes" id='3' onClick={this.closeTask}></div><span className='text-note' id='task4'>Terminar tarea de geografía</span></div>
-                    <hr/>
-                    <div><div className="checkbox-notes" id='4' onClick={this.closeTask}></div><span className='text-note' id='task5'>Terminar tarea de Matemáticas</span></div>
-                    <hr/>
-                    <div><div className="checkbox-notes" id='5' onClick={this.closeTask}></div><span className='text-note' id='task6'>Terminar tarea de Historía</span></div> */}
                 </div>
                 <div className="add-note-notes">
-                    <form action="">
-                        <input type="text" name="newNote" placeholder='Escribe tu nota aquí' id=""/>
-                        <button>Añadir</button>
-                    </form>
+                    <form onSubmit={this.createTask}>
+                    <input type="text" value={this.state.newTaskText}  placeholder='Escribe tu nota aquí' onChange={this.updateInput} />
+                
+                    <input type="submit" value="Añadir" />
+                </form>       
                 </div>
             </section>
         )
