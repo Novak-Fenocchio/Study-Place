@@ -18,7 +18,7 @@
 }
 .btn-white {
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 6px;
   border-radius: black;
   color: black;
@@ -46,14 +46,22 @@
   margin-right: auto;
   width: 20%;
 }
+/* Body */
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+}
+.App {
+  background-color: rgba(0, 0, 0, 0.212);
+  height: 100vh;
+}
 /* pomodoro */
-
 .section-pomodoro {
-  background: rgb(255, 43, 84);
+  background: rgba(255, 43, 85, 0.226);
   background: linear-gradient(
     0deg,
-    rgba(255, 43, 84, 1) 0%,
-    rgba(255, 72, 131, 1) 100%
+    rgba(255, 43, 85, 0.397) 0%,
+    rgba(255, 72, 130, 0.404) 100%
   );
   border-radius: 10px;
   text-align: center;
@@ -153,7 +161,7 @@
   width: 5%;
 }
 .lastImagequote button {
-  margin-right: 3vw;
+  margin-right: 1vw;
   margin-top: 2vw;
 }
 .lastImagequote img {

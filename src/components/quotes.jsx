@@ -16,6 +16,11 @@ export default class Quotes extends Component {
             loadingQuote: false
         }
     }
+    generateNewQuote = () =>
+    {
+        this.getQuote();
+        this.getQuote();
+    }
 
     getQuote = async() =>
     {  
@@ -62,7 +67,7 @@ export default class Quotes extends Component {
                         {
                         this.state.loadingQuote == false && this.state.quote == false &&
                         <div className="container-button">
-                            <button className='btn btn-black btn-quote' onClick={this.getQuote}>Nueva frase</button>
+                            <button className='btn btn-black btn-quote' onClick={this.generateNewQuote}>Nueva frase</button>
                         </div>
                          }
                          {
@@ -78,7 +83,7 @@ export default class Quotes extends Component {
                         <div className="container-quote-image container-button lastImagequote">
                         {this.state.quote != false &&
                          <React.Fragment>
-                            <button className='btn-white btn-next-quote' onClick={this.getQuote}>Nueva frase</button>
+                            <button className='btn-white btn-next-quote' onClick={this.generateNewQuote}>Nueva frase</button>
                             <button className='btn-orange btn-next-quote' onClick={this.addQuote}>Añadir frase</button> 
                          </React.Fragment>
                         }
