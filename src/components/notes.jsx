@@ -6,11 +6,13 @@ export default class Notes extends Component {
     constructor()
     {
         super();
+
         this.state = 
         {
             taskClose: [],
             tasks: [],
-            newTaskText : ''
+            newTaskText : '',
+            inputRefs : []
         }
 
         this.updateInput = this.updateInput.bind(this);
@@ -33,27 +35,7 @@ export default class Notes extends Component {
             tasks.splice(tasks.length,0,task);
         })}
         console.log(tasks);
-        
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
          this.setState({
             tasks: tasks
         }) 
@@ -61,25 +43,26 @@ export default class Notes extends Component {
     }
     closeTask = (e) =>
     {
-        this.addTask()
-    /*     const id = e.currentTarget.id;
+        const id = e.currentTarget.id;
+
         let styles = [];
-       
-        console.log(id);
+        
+        {
+            this.state.taskClose.map(taskver =>
+            {
+             styles.splice(styles.length,0,taskver);
+            })
+        }
+
+
         let taskClosea = {textDecoration: 'line-through', color: 'gray'};
-        styles.push(taskClosea);
-        console.log(styles);
-  
-        let taskClosea2 = {textDecoration: 'line-through', color: 'red'};
-        styles.push(taskClosea2);
-                                
-
-
+        styles.splice(styles.length,0,taskClosea);
+        
         console.log(styles);
 
         this.setState({
             taskClose : styles
-        }) */
+        }) 
     }
 
 
@@ -92,30 +75,48 @@ export default class Notes extends Component {
         event.preventDefault();
         this.addTask(newTaskText)
       }
+      
+    hiddenTask = (e,ref) =>
+      {
 
+      }
+
+    focusInput = (id) => {
+         
+            this.state.inputRefs[0].style.textDecoration = 'line-through';
+            this.state.inputRefs[0].style.color = 'gray';
+        }
+      setRef = (ref) =>
+      {
+        let temporalRefs = [];
+
+        temporalRefs.push(ref);  
+        this.setState({
+            inputRefs: temporalRefs
+        })
+      }
     render() {
         return (
             <section className='section-notes'>
                 <div className="header-notas">
-                    <h3>Notas</h3>
+                    <h3 ref='yeah'>Notas</h3>
                 </div>
 
                 <div className="main-notas">
-                {this.state.tasks.map(task =>(
-                    <React.Fragment>
-                        <div><div className="checkbox-notes" id='1' onClick={this.closeTask}></div><span className='text-note' id='task2' style={this.state.taskClose[1]}>{task}</span></div>
+                {this.state.tasks.map((task, index) =>(
+                    <React.Fragment>    
+                        <div key={index} onClick={this.focusInput}  id={index}><div className="checkbox-notes"  onClick={this.closeTask}></div><span className='text-note' ref={this.setRef}  id={'task'+index}>{task}</span></div>
                         <hr/>
                     </React.Fragment>
                 ))}
                 <hr/>
                
-                <div><div className="checkbox-notes" id='1' onClick={this.closeTask}></div><span className='text-note' id='task2' style={this.state.taskClose[1]}>Terminar tarea de Matemáticas</span></div>
-                        <hr/>
                 </div>
+                        
+
                 <div className="add-note-notes">
                     <form onSubmit={this.createTask}>
                     <input type="text" value={this.state.newTaskText}  placeholder='Escribe tu nota aquí' onChange={this.updateInput} />
-                
                     <input type="submit" value="Añadir" />
                 </form>       
                 </div>
