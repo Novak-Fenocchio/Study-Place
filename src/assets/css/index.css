@@ -300,3 +300,13 @@ body {
 .add-note-notes input[type="submit"] {
   float: right;
 }
+/* Clock */
+.container-clock {
+  color: white;
+  position: absolute;
+  left: 82%;
+  top: 3%;
+}
+.container-clock h1 {
+  font-size: 4vw;
+}

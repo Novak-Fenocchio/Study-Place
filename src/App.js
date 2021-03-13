@@ -1,9 +1,10 @@
-import logo from './logo.svg';
 import './assets/css/index.css';
+
 
 import Pomodoro from './components/pomodoro';
 import Quotes from './components/quotes';
 import Notes from './components/notes';
+import Clock from './components/clock';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Pomodoro />
         <Quotes/>
         <Notes />
+        <Clock/>
       </div>
     </div>
   );
