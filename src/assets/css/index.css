@@ -310,3 +310,51 @@ body {
 .container-clock h1 {
   font-size: 4vw;
 }
+/* Dictionary */
+.background-dictonary {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Triptico.pdf/page1-1200px-Triptico.pdf.jpg");
+  background-size: 100%;
+  border-radius: 15px;
+  position: absolute;
+  top: 60%;
+  left: 3%;
+}
+.container-dictionary {
+  background-color: rgba(0, 0, 0, 0.658);
+  border-radius: 10px;
+  color: white;
+  padding: 1vw 2vw;
+  text-align: center;
+}
+.container-dictionary form {
+  margin: 1vw;
+  text-align: center;
+}
+.container-dictionary input[type="text"] {
+  background-color: rgba(0, 0, 0, 0.575);
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  color: rgb(214, 213, 213);
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 1.7vw;
+  padding: 0.5vw 1vw;
+}
+.container-dictionary input[type="text"]::-webkit-input-placeholder  {
+  font-weight: lighter;
+  font-style: italic;
+}
+.container-dictionary input[type="text"]:focus {
+  outline: none;
+}
+.container-dictionary button {
+  background-color: rgb(253, 187, 43);
+  border: 2px solid rgb(253, 187, 43);
+  border-radius: 5px;
+  color: black;
+  font-size: 1.5vw;
+  margin-left: 1vw;
+  margin-top: 1vw;
+  padding: 0.5vw 1vw;
+  width: 50%;
+}

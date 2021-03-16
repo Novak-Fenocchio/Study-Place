@@ -5,6 +5,7 @@ import Pomodoro from './components/pomodoro';
 import Quotes from './components/quotes';
 import Notes from './components/notes';
 import Clock from './components/clock';
+import Dictionary from './components/dictionary';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Quotes/>
         <Notes />
         <Clock/>
+        <Dictionary/>
       </div>
     </div>
   );
