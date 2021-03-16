@@ -37,34 +37,33 @@ export default class Notes extends Component {
         console.log(tasks);
     
          this.setState({
-            tasks: tasks
+            tasks: tasks,
+            newTaskText: ''
         }) 
         console.log(tasks);
     }
-    closeTask = (e) =>
+
+    closeTask = (id) =>
     {
-        const id = e.currentTarget.id;
+        const tasks = [];
+  
 
-        let styles = [];
-        
-        {
-            this.state.taskClose.map(taskver =>
-            {
-             styles.splice(styles.length,0,taskver);
-            })
-        }
+        console.log(tasks);
 
+        {this.state.tasks.map(task =>
+         {
+            tasks.splice(tasks.length,0,task);
+        })}
 
-        let taskClosea = {textDecoration: 'line-through', color: 'gray'};
-        styles.splice(styles.length,0,taskClosea);
-        
-        console.log(styles);
-
-        this.setState({
-            taskClose : styles
+        console.log(tasks);
+    
+         this.setState({
+            tasks: tasks
         }) 
-    }
+        tasks.splice(id,1);
+        console.log(tasks); 
 
+    }
 
     updateInput(event) {
         this.setState({newTaskText: event.target.value});
@@ -76,25 +75,7 @@ export default class Notes extends Component {
         this.addTask(newTaskText)
       }
       
-    hiddenTask = (e,ref) =>
-      {
 
-      }
-
-    focusInput = (id) => {
-         
-            this.state.inputRefs[0].style.textDecoration = 'line-through';
-            this.state.inputRefs[0].style.color = 'gray';
-        }
-      setRef = (ref) =>
-      {
-        let temporalRefs = [];
-
-        temporalRefs.push(ref);  
-        this.setState({
-            inputRefs: temporalRefs
-        })
-      }
     render() {
         return (
             <section className='section-notes'>
@@ -105,7 +86,7 @@ export default class Notes extends Component {
                 <div className="main-notas">
                 {this.state.tasks.map((task, index) =>(
                     <React.Fragment>    
-                        <div key={index} onClick={this.focusInput}  id={index}><div className="checkbox-notes"  onClick={this.closeTask}></div><span className='text-note' ref={this.setRef}  id={'task'+index}>{task}</span></div>
+                        <div key={index} onClick={(event) =>this.closeTask(index)}><div className="checkbox-notes"></div><span className='text-note'>{task}</span></div>
                         <hr/>
                     </React.Fragment>
                 ))}

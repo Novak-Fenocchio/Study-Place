@@ -259,6 +259,9 @@ body {
   font-weight: bold;
   margin-left: 1vw;
 }
+.text-note:active{
+  font-weight: lighter;
+}
 .add-note-notes {
   background-color: rgb(233, 8, 8);
   border-radius: 0 0 1vw 1vw;
@@ -357,4 +360,12 @@ body {
   margin-top: 1vw;
   padding: 0.5vw 1vw;
   width: 50%;
+}
+/* Test */
+.container-test
+{
+  color: white;
+  position: absolute;
+  left: 40%;
+  top: 50%;
 }
