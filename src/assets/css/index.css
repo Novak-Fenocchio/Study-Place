@@ -125,6 +125,10 @@ body {
 .pomodoro-finished div {
   text-align: center;
 }
+.pomodoro-finished h4 {
+  font-weight: lighter;
+  text-align: center;
+}
 .btn-pomodoro-finished {
   background: none;
   border: 2px solid black;
@@ -136,6 +140,39 @@ body {
 .btn-pomodoro-finished:hover {
   background: black;
   color: white;
+}
+.container-search-plataforms {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1vw;
+  margin-top: 2vw;
+  width: 37vw;
+}
+.container-search-plataforms .borderRadius {
+  border-radius: 30%;
+}
+
+.container-search-plataforms img {
+  width: 100%;
+}
+.container-search-plataforms img:hover {
+  transform: scale(1.1);
+}
+.selectPlataForm {
+  display: flex;
+  flex-direction: column;
+}
+.closeX {
+  background-color: rgba(255, 211, 14, 0);
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 4vw;
+  margin-top: 2vw;
+  padding: 0.5vw 1.5vw;
+}
+.closeX:hover {
+  background-color: black;
+  color: rgb(255, 211, 14);
 }
 /* quotes */
 .container-quotes {
@@ -259,7 +296,7 @@ body {
   font-weight: bold;
   margin-left: 1vw;
 }
-.text-note:active{
+.text-note:active {
   font-weight: lighter;
 }
 .add-note-notes {
@@ -343,7 +380,7 @@ body {
   font-size: 1.7vw;
   padding: 0.5vw 1vw;
 }
-.container-dictionary input[type="text"]::-webkit-input-placeholder  {
+.container-dictionary input[type="text"]::-webkit-input-placeholder {
   font-weight: lighter;
   font-style: italic;
 }
@@ -362,8 +399,7 @@ body {
   width: 50%;
 }
 /* Test */
-.container-test
-{
+.container-test {
   color: white;
   position: absolute;
   left: 40%;

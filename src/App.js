@@ -1,6 +1,5 @@
 import './assets/css/index.css';
 
-
 import Pomodoro from './components/pomodoro';
 import Quotes from './components/quotes';
 import Notes from './components/notes';
