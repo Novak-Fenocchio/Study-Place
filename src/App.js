@@ -3,8 +3,8 @@ import './assets/css/index.css';
 import Pomodoro from './components/pomodoro';
 import Quotes from './components/quotes';
 import Notes from './components/notes';
-import Clock from './components/clock';
 import Dictionary from './components/dictionary';
+import Shortcuts from './components/shortcuts';
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
         <Pomodoro />
         <Quotes/>
         <Notes />
-        <Clock/>
         <Dictionary/>
+        <Shortcuts/>
       </div>
     </div>
   );

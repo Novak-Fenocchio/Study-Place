@@ -80,7 +80,7 @@ export default class Notes extends Component {
         return (
             <section className='section-notes'>
                 <div className="header-notas">
-                    <h3 ref='yeah'>Notas</h3>
+                    <h3 >Notas</h3>
                 </div>
 
                 <div className="main-notas">

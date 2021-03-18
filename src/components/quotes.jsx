@@ -20,6 +20,8 @@ export default class Quotes extends Component {
     {
         this.getQuote();
         this.getQuote();
+        setTimeout(this.confirmLoad, 3000);
+
     }
 
     getQuote = async() =>
@@ -53,6 +55,17 @@ export default class Quotes extends Component {
             newQuotePersonally: true,
             addQuote: false
         })
+    }
+    confirmLoad = () =>
+    {   
+        if(this.state.loadingQuote == true){
+            this.generateNewQuote();
+        }
+    }
+    componentDidMount()
+    {
+        this.generateNewQuote();
+        setTimeout(this.confirmLoad, 3000);
     }
 
     render() {
