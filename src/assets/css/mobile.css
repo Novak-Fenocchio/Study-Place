@@ -1,0 +1,133 @@
+@media (max-width: 1000px) {
+  .section-pomodoro,
+  .pomodoro-finished,
+  .container-quotes,
+  .section-notes,
+  .background-dictonary,
+  .container-test,
+  .container-shortcuts {
+    margin: auto;
+    position: initial;
+    width: 80%;
+  }
+  body {
+    background-size: 300%;
+  }
+  .containerMain-sections {
+    background-image: url("/src/assets/css/background.jpg");
+  }
+  .App {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+  }
+  .container-sections {
+    background-color: rgba(0, 0, 0, 0.212);
+    padding-bottom: 6vw;
+  }
+  /* utilities */
+  .btn-white {
+    border-radius: 2px;
+  }
+  .btn-orange {
+    border-radius: 2px;
+  }
+
+  /* Pomodoro */
+  .section-pomodoro {
+    margin-top: 3vw;
+    padding-bottom: 3vw;
+  }
+  .section-pomodoro h1 {
+    font-size: 7vw;
+  }
+  .section-pomodoro span {
+    font-size: 13vw;
+  }
+  .btn-empezar {
+    font-size: 4vw;
+    width: 60%;
+  }
+  /* Quote */
+  .container-quotes {
+    margin-top: 3vw;
+  }
+  .text-qoute {
+    font-size: 4vw;
+  }
+  .container-button {
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+  }
+  .container-button button {
+    font-size: 3vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+  /* Notes */
+  .section-notes {
+    margin-top: 3vw;
+    width: 90%;
+  }
+  .main-notas {
+    height: 22vh;
+  }
+  .checkbox-notes {
+    height: 3vw;
+    margin-top: 1.5vw;
+    width: 3vw;
+  }
+  .text-note {
+    font-size: 5vw;
+  }
+  .add-note-notes {
+    padding: 0;
+  }
+  .add-note-notes input {
+    font-size: 5vw;
+  }
+
+  /* Shortcuts */
+  .container-shortcuts {
+    color: white;
+    height: initial;
+    margin-top: 3vw;
+    margin-bottom: 1vw;
+    padding-bottom: 2vw;
+    width: 90%;
+  }
+  .container-shortcuts-pages img {
+    width: 90%;
+  }
+  .container-clock h1 {
+    bottom: 10%;
+    font-size: 5vw;
+    position: absolute;
+    right: 7%;
+  }
+  .container-shortcuts-pages {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 0.5vw;
+    margin-top: 3vw;
+  }
+
+  /* Searcher */
+  .background-dictonary {
+    margin-top: 3vw;
+    width: 90%;
+  }
+  .container-dictionary {
+    font-size: 5vw;
+  }
+  .container-dictionary input[type="text"] {
+    font-size: 7vw;
+    margin: 4vw 0vw;
+    padding: 1.5vw 3vw;
+  }
+  .container-dictionary button {
+    font-size: 5vw;
+    margin: 2vw 0;
+  }
+}

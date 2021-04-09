@@ -421,3 +421,55 @@ body {
   font-weight: lighter;
   margin-top: 1vw;
 }
+/* Shortcuts pages */
+.container-shortcuts-pages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5vw;
+  margin-top: 1.5vw;
+}
+.container-shortcuts-pages div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.container-shortcuts-pages img {
+  width: 100%;
+}
+.container-shortcuts-pages img:hover {
+  transform: scale(1.2);
+}
+/* Spotify */
+.container-youtube {
+  position: absolute;
+  top: 45%;
+  left: 32%;
+}
+/* Letter */
+.letter {
+  background-image: url("./helado.jpg");
+  background-position: center;
+  background-size: 100%;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  height: 20vw;
+  overflow-y: hidden;
+  width: 30vw;
+}
+.back {
+  background-color: rgba(0, 0, 0, 0.582);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 20vw;
+  text-align: center;
+}
+.back .b {
+  font-weight: 200;
+}
+.back .a {
+  font-weight: bold !important;
+}
